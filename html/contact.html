@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .error {
+            color: red;
+            font-size: 12px;
+        }
+        .contact-container {
+            margin-top: 150px; /* Adjust this value to create the desired gap */
+        }
+    </style>
+</head>
+<body>   
+    <!-- Include header -->
+    <div class="container">    
+        <header>  
+        <a href="index.html" class="logo"><img src="../resources/images/logo (1).png" alt="Logo"></a>
+        <ul class="navmenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="extras">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <a href="login.html" class="sign-in">Sign In</a>
+        </div>
+    </header></div>
+<div class="container">
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>Please fill out the form below to get in touch with us.</p>
+        </div>
+
+        <div class="contact-form-section">
+            <form id="contactForm" action="#" method="POST">
+                <div class="contact-form-group">
+                    <input type="text" name="name" id="name" placeholder="Your Name" required>
+                    <div class="error" id="nameError"></div>
+                </div>
+
+                <div class="contact-form-group">
+                    <input type="email" name="email" id="email" placeholder="Your Email" required>
+                    <div class="error" id="emailError"></div>
+                </div>
+
+                <div class="contact-form-group">
+                    <input type="tel" name="phone" id="phone" placeholder="Your Phone">
+                </div>
+
+                <div class="contact-form-group">
+                    <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <div class="error" id="messageError"></div>
+                </div>
+
+                <div class="contact-form-group">
+                    <button type="submit" class="contact-submit-button">Send Message</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="contact-footer">
+            <div class="contact-info-section">
+                <div class="contact-info-block">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Location</h3>
+                    <p>Maijubahal, Kathmandu, Nepal</p>
+                </div>
+
+                <div class="contact-info-block">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <p>+977 9818673268</p>
+                </div>
+
+                <div class="contact-info-block">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>kcrohanraj@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>  
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            let valid = true;
+
+            // Clear previous error messages
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('messageError').textContent = '';
+
+            // Name validation
+            const name = document.getElementById('name').value;
+            if (name.trim() === '') {
+                document.getElementById('nameError').textContent = 'Name is required';
+                valid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email.trim() === '') {
+                document.getElementById('emailError').textContent = 'Email is required';
+                valid = false;
+            } else if (!emailPattern.test(email)) {
+                document.getElementById('emailError').textContent = 'Invalid email format';
+                valid = false;
+            }
+
+            // Message validation
+            const message = document.getElementById('message').value;
+            if (message.trim() === '') {
+                document.getElementById('messageError').textContent = 'Message is required';
+                valid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

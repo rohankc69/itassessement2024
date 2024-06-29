@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - KUMO Laptop Store</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">    
+        <header>  
+        <a href="index.html" class="logo"><img src="../resources/images/logo (1).png" alt="Logo"></a>
+        <ul class="navmenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Shop</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="extras">
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="Search...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <a href="login.html" class="sign-in">Sign In</a>
+        </div>
+    </header></div>
+    <div class="container">    
+        <section style="padding-top: 10%">
+        <div class="centre-text">
+            <h2>Gallery</h2>
+        </div>
+    </section></div>
+    <div class="container">    
+        <section class="gallery">
+        <div class="gallery-item">
+            <img src="../resources/images/artiom-vallat-1uBCLmu5BqA-unsplash.jpg" alt="Image 1" onclick="openFullscreen(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="../resources/images/gaming-laptop.png" alt="Image 2" onclick="openFullscreen(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="../resources/images/laptop5.png" alt="Image 3" onclick="openFullscreen(this.src)">
+        </div>
+    </section>
+    <section class="gallery">
+        <div class="gallery-item">
+            <img src="../resources/images/lp 4.webp" alt="Image 1" onclick="openFullscreen(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="../resources/images/lp14.webp" alt="Image 2" onclick="openFullscreen(this.src)">
+        </div>
+        <div class="gallery-item">
+            <img src="../resources/images/monitor.jfif" alt="Image 3" onclick="openFullscreen(this.src)">
+        </div>
+    </section></div>
+
+
+    <div class="fullscreen" id="fullscreen">
+        <span class="close-btn" onclick="closeFullscreen()">&times;</span>
+        <img src="" alt="Fullscreen Image">
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Get Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Mac</a></li>
+                    <li><a href="#">Monitors</a></li>
+                    <li><a href="#">Keyboard</a></li>
+                    <li><a href="#">PC Components</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function openFullscreen(imageSrc) {
+            const fullscreen = document.getElementById('fullscreen');
+            fullscreen.querySelector('img').src = imageSrc;
+            fullscreen.style.display = 'flex';
+        }
+
+        function closeFullscreen() {
+            document.getElementById('fullscreen').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
